@@ -1,0 +1,26 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Node application where you can buy, sell, and manage products.",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsevalieu/bAmazon.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Eva Lieu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsevalieu/bAmazon/issues"
+  },
+  "homepage": "https://github.com/itsevalieu/bAmazon#readme",
+  "dependencies": {
+    "inquirer": "^2.0.0",
+    "mysql": "^2.12.0"
+  }
+}

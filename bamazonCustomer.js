@@ -37,24 +37,12 @@ function service(){
 		{
 			name: "id",
 			message: "What is the ID of the item you want to buy?",
-			type: "input",
-			validate: function (input) {
-		    	if (input !== 'number') {
-		        	console.log("\nYou need to provide a number.");
-		        	return;
-		      	}
-			}
+			type: "input"
 		},
 		{
 			name: "desiredQuantity",
 			message: "How many units would you like to buy of this item?",
-			type: "input",
-			validate: function (input) {
-		    	if (input !== 'number') {
-		        	console.log("\nYou need to provide a number.");
-		        	return;
-		      	}
-			}
+			type: "input"
 		}
 		]).then(function(response){
 			var id = response.id;

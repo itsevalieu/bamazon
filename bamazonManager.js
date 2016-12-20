@@ -55,6 +55,13 @@ function viewProducts(){
 }
 function viewLowInventory(){
 	// then it should list all items with a inventory count lower than five.	
+	connection.query("SELECT item_id, product_name, stock_quantity FROM products WHERE stock_quantity < 5", function(error, data){
+		console.log("Products in need of restocking:");
+		for(var i = 0; i < data.length; i++){
+			var list = 	"ID. #" + data[i].item_id + " || Item: " + data[i].product_name + ", In Stock: " + data[i].stock_quantity;
+			console.log(list);
+		}
+	});
 }
 function addInventory(){
 	//your app should display a prompt that will let the manager "add more" of any item currently in the store.

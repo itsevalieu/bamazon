@@ -1,6 +1,20 @@
 var inquirer = require("inquirer");
 var mysql = require("mysql");
 
+var connection = mysql.createConnection({
+	host: "localhost",
+	port: 3306,
+	user: "root",
+	password: "codemore1",
+	database: "bamazonDB"
+});
+
+connection.connect(function(err) {
+	if (err) throw err;
+	console.log("Connected as id " + connection.threadId);
+});
+
+setTimeout(start, 1000);
 function start(){
 	inquirer.prompt([
 	{
@@ -29,6 +43,15 @@ function start(){
 }
 function viewProducts(){
 	// the app should list every available item: the item IDs, names, prices, and quantities.
+	connection.query("SELECT item_id, product_name, price, stock_quantity FROM products", function(error, data){
+		if(error){
+			return console.log("Error!");
+		}
+		for(var i = 0; i < data.length; i++){
+			var list = 	"ID. #" + data[i].item_id + " || Item: " + data[i].product_name + ", $" + data[i].price + ", In Stock: " + data[i].stock_quantity;
+			console.log(list);
+		}
+	});
 }
 function viewLowInventory(){
 	// then it should list all items with a inventory count lower than five.	

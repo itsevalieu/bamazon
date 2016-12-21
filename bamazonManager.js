@@ -123,6 +123,11 @@ function addNewProducts(){
 			input: "input"
 		}
 		]).then(function(response){
-			console.log("response");
+			connection.query("INSERT INTO products SET ?", {product_name: response.product, price: response.price, stock_quantity: response.quantity, department_name: response.department}, function(error, data){
+				if(error){
+					return console.log("Error!");
+				}
+				console.log("Success! You've added a new item to inventory!");
+			});
 	});
 }

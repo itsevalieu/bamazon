@@ -69,7 +69,6 @@ function check(id, desiredQuantity){
 				if(error){
 					return console.log("Error!");
 				}
-				console.log(data);
 			});
 			return console.log("Purchase successful! Your total price is: $" + totalPrice.toFixed(2));
 

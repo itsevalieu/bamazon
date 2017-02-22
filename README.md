@@ -1,4 +1,7 @@
-# bAmazon
+# Week 12: Bamazon
+Technologies:
+* JS, Node.js, MySQL
+
 ## Features include:
 
 1. Customer Functions:

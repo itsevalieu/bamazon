@@ -1,4 +1,4 @@
-# Week 12: Bamazon
+# Bamazon
 Technologies:
 * JS, Node.js, MySQL
 
